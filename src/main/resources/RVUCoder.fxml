@@ -28,7 +28,7 @@
       <RowConstraints maxHeight="1920.0" minHeight="10.0" prefHeight="731.0" vgrow="ALWAYS" />
    </rowConstraints>
    <children>
-      <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" GridPane.rowIndex="4">
+      <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" GridPane.rowIndex="4">
          <content>
             <AnchorPane minHeight="-Infinity" minWidth="-Infinity">
                <children>

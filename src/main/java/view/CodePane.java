@@ -20,12 +20,16 @@ import javafx.scene.text.Font;
  * @author Andrew McGuiness
  * @version 4/13/2017
  */
+//TODO: Sort Columns
+//TODO: remove up and down
+//TODO: highlight duplicates
+
 public class CodePane extends GridPane {
     private static final int ROW = 0;
 
     public CodePane() {
-        setHgap( 10 );
-        setPadding( new Insets( 5 ) );
+        setHgap( 5 );
+        setPadding( new Insets( 0 ) );
 
         initRowsCols();
         initText();
@@ -37,22 +41,22 @@ public class CodePane extends GridPane {
         selectBox.setFocusTraversable( false );
         add( selectBox, 0, ROW );
 
-        Button upArrow = new Button( "^" );
-        upArrow.setFocusTraversable( false );
-        upArrow.setAlignment( Pos.CENTER_RIGHT );
-        add( upArrow, 5, ROW );
-        setHalignment( upArrow, HPos.RIGHT );
-
-        Button downArrow = new Button( "v" );
-        downArrow.setFocusTraversable( false );
-        downArrow.setAlignment( Pos.CENTER_RIGHT );
-        add( downArrow, 6, ROW );
-        setHalignment( downArrow, HPos.LEFT );
+//        Button upArrow = new Button( "^" );
+//        upArrow.setFocusTraversable( false );
+//        upArrow.setAlignment( Pos.CENTER_RIGHT );
+//        add( upArrow, 5, ROW );
+//        setHalignment( upArrow, HPos.RIGHT );
+//
+//        Button downArrow = new Button( "v" );
+//        downArrow.setFocusTraversable( false );
+//        downArrow.setAlignment( Pos.CENTER_RIGHT );
+//        add( downArrow, 6, ROW );
+//        setHalignment( downArrow, HPos.LEFT );
 
         Button closeButton = new Button( "X" );
         closeButton.setFocusTraversable( false );
         closeButton.setAlignment( Pos.CENTER_RIGHT );
-        add( closeButton, 7, ROW );
+        add( closeButton, 4, ROW );
         setHalignment( closeButton, HPos.RIGHT );
     }
 
@@ -65,21 +69,21 @@ public class CodePane extends GridPane {
         count.setAlignment( Pos.CENTER );
         add( count, 2, ROW );
 
-        Label valueLabel = new Label( "$##.00" );
+        Label valueLabel = new Label( "0.00" );
         valueLabel.setAlignment( Pos.CENTER );
         valueLabel.setFont( Font.font( 14 ) );
         add( valueLabel, 3, ROW );
     }
 
     private void initRowsCols() {
-        getColumnConstraints().add( new ColumnConstraints( 50, 50, 50, Priority.SOMETIMES, HPos.CENTER, true ) );
-        getColumnConstraints().add( new ColumnConstraints( 150, 150, 150, Priority.SOMETIMES, HPos.CENTER, true ) );
-        getColumnConstraints().add( new ColumnConstraints( 150, 150, 150, Priority.SOMETIMES, HPos.CENTER, true ) );
-        getColumnConstraints().add( new ColumnConstraints( 150, 150, 150, Priority.SOMETIMES, HPos.CENTER, true ) );
-        getColumnConstraints().add( new ColumnConstraints( 150, 150, 150, Priority.SOMETIMES, HPos.CENTER, true ) );
-        getColumnConstraints().add( new ColumnConstraints( 50, 50, 50, Priority.SOMETIMES, HPos.CENTER, true ) );
-        getColumnConstraints().add( new ColumnConstraints( 50, 50, 50, Priority.SOMETIMES, HPos.CENTER, true ) );
-        getColumnConstraints().add( new ColumnConstraints( 50, 50, 50, Priority.SOMETIMES, HPos.CENTER, true ) );
+
+        getColumnConstraints().add( new ColumnConstraints( 50, 50, 50, Priority.NEVER, HPos.CENTER, true ) );
+
+        getColumnConstraints().add( new ColumnConstraints( 150, 200, 200, Priority.NEVER, HPos.CENTER, true ) );
+        getColumnConstraints().add( new ColumnConstraints( 150, 200, 200, Priority.NEVER, HPos.CENTER, true ) );
+        getColumnConstraints().add( new ColumnConstraints( 150, 200, 200, Priority.NEVER, HPos.CENTER, true ) );
+
+        getColumnConstraints().add( new ColumnConstraints( 50, 50, 50, Priority.NEVER, HPos.CENTER, true ) );
 
         getRowConstraints().add( new RowConstraints( 10, 30, 30, Priority.SOMETIMES, VPos.CENTER, true ) );
     }

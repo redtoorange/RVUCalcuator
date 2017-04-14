@@ -33,6 +33,9 @@ public class ApplicationController {
 
     @FXML
     public void initialize() {
+//        for(int i = 0; i < 100; i++){
+//            codeBox.getChildren().add( new CodePane() );
+//        }
         codeBox.getChildren().add( new CodePane() );
     }
 
